@@ -44,6 +44,7 @@ class Order(models.Model):
         ("Delivered", "Delivered"),
     }
 
+    order_id = models.CharField(max_length=100, null=True, blank=True)
     customer_id = models.ForeignKey(Customer, null=True, blank=True, related_name='customer', on_delete=SET_NULL)
     product_id = models.ForeignKey(Product, null=True, blank=True, related_name='product', on_delete=SET_NULL)
     quantity = models.CharField(max_length=100, null=True, blank=True)

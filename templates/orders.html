@@ -9,26 +9,19 @@
                 <h2>Order Application</h2>
               </div>
             </div>
-            <form class="mt-2">
+            <form class="mt-2" action="#", method="post">
+              {% csrf_token %}
+              {% for form in forms %}
               <div class="mb-3">
-                <label for="exampleInputName" class="form-label">Name</label>
-                <input type="text" class="form-control" id="exampleInputName" aria-describedby="NameHelp">
+                <label for="exampleInputName" class="form-label">{{form.name}}</label>
+                <div class="mt-2 form-control">
+                  {{form}}
+                </div>
+
               </div>
               
-              <div class="mb-3">
-                <label for="exampleInputAddress" class="form-label">Address</label>
-                <input type="text" class="form-control" id="exampleInputAddress">
-              </div>
-
-              <div class="mb-3">
-                <label for="exampleInputProduct" class="form-label">Product</label>
-                <select class="form-control">
-                  <option class="form-control">Bag</option>
-                  <option class="form-control">Shoes</option>
-                  <option class="form-control">Mobile Phone</option>
-                  <option class="form-control">Laptop</option>
-                </select>
-              </div>
+             
+              {% endfor %}
               <button type="submit" class="btn btn-primary">Submit</button>
             </form>
       </div>
