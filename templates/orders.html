@@ -1,31 +1,37 @@
-{% extends "main.html" %}
-{% block content%}
-    <!-- Form start-->
-    <div class="container">
-      <div class="row">
+{% extends "main.html" %} {% block content%}
+<!-- Form start-->
+<div class="container">
+    <div class="row">
 
-            <div class="container">
-              <div class="row mt-4 text-center">
+        <div class="container">
+            <div class="row mt-4 text-center">
                 <h2>Order Application</h2>
-              </div>
             </div>
-            <form class="mt-2" action="#", method="post">
-              {% csrf_token %}
-              {% for form in forms %}
-              <div class="mb-3">
-                <label for="exampleInputName" class="form-label">{{form.name}}</label>
-                <div class="mt-2 form-control">
-                  {{form}}
-                </div>
+        </div>
+        <form class="mt-2" action="#" , method="post">
+            {% csrf_token %}
 
-              </div>
-              
-             
-              {% endfor %}
-              <button type="submit" class="btn btn-primary">Submit</button>
-            </form>
-      </div>
+
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">{{ form.order_id.label }}</label>
+                <div class="form-control">{{ form.order_id }}</div>
+                <label for="exampleInputEmail1" class="form-label">{{ form.customer_id.label }}</label>
+                <div class="form-control">{{ form.customer_id }}</div>
+                <label for="exampleInputEmail1" class="form-label">{{ form.product_id.label }}</label>
+                <div class="form-control">{{ form.product_id }}</div>
+                <label for="exampleInputEmail1" class="form-label">{{ form.quantity.label }}</label>
+                <div class="form-control">{{ form.quantity }}</div>
+                <label for="exampleInputEmail1" class="form-label">{{ form.delivary.label }}</label>
+                <div class="form-control">{{ form.delivary }}</div>
+
+            </div>
+
+
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
     </div>
- <!-- Form end-->
+</div>
+<!-- Form end-->
 
- {%endblock%}
+{%endblock%}
